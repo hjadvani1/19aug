@@ -12,7 +12,7 @@ class javascript {
     constructor() {
     }
 
-    stringmethod = async (req: Request, res: Response) => {
+    string_method = (req: Request, res: Response) => {
 
         const name: string = "webelight"
         res.send(name);
@@ -26,7 +26,7 @@ class javascript {
         console.log(anime.includes('titan'));
     }
 
-    numbermethod = async (req: Request, res: Response) => {
+    number_method = (req: Request, res: Response) => {
 
         let number: Number = 145.789;
         res.send(number.toFixed())
@@ -34,7 +34,7 @@ class javascript {
 
     }
 
-    arraymethod = async (req: Request, res: Response) => {
+    array_method = (req: Request, res: Response) => {
         let arr: string[];
         arr = ['eren', 'mikasa', 'erwin'];
         // arr.pop();
@@ -220,7 +220,7 @@ class javascript {
         });
     };
 
-    promise =  (req: Request, res: Response) => {
+    promise = (req: Request, res: Response) => {
         // let p = new Promise((resolve, reject) => {
         //     setTimeout(() => {
         //         resolve(10);

@@ -11,9 +11,9 @@ const router: Router = Router();
 
 
 // })
-router.get('/string', js.stringmethod)
-router.get('/number', js.numbermethod)
-router.get('/array', js.arraymethod)
+router.get('/string', js.string_method)
+router.get('/number', js.number_method)
+router.get('/array', js.array_method)
 router.get('/axiosgetposts',js.get_posts)
 router.get('/axiosgetpost/:id',js.get_post)
 router.post('/axiospost/:id',js.update_Post);
