@@ -131,7 +131,7 @@ class javascript {
 
         console.log(filteredanime);
 
-        const getanime = function (animes: animes[]) {
+        const getanime = (animes: animes[]) => {
             return animes.filter((anime: any) => {
                 return anime.watch;
             })
