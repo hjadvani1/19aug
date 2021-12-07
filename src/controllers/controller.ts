@@ -52,7 +52,7 @@ class javascript {
         })
 
         //for
-        for (let i: number = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
 
             let number: number = i + 1;
             const arra = arr[i]
