@@ -14,12 +14,12 @@ const router: Router = Router();
 router.get('/string', js.string_method)
 router.get('/number', js.number_method)
 router.get('/array', js.array_method)
-router.get('/axiosgetposts',js.get_posts)
-router.get('/axiosgetpost/:id',js.get_post)
-router.post('/axiospost/:id',js.update_Post);
-router.post('/axiosdelete/:id',js.delete_Post);
-router.post('/axiosposts',js.add_Post);
-router.get('/getpromise',js.promise)
+router.get('/axiosgetposts', js.get_posts)
+router.get('/axiosgetpost/:id', js.get_post)
+router.post('/axiospost/:id', js.update_Post);
+router.post('/axiosdelete/:id', js.delete_Post);
+router.post('/axiosposts', js.add_Post);
+router.get('/getpromise', js.promise)
 
 
 
@@ -39,22 +39,22 @@ router.get('/getset', (req: Request, res: Response) => {
             }
         }
 
-        public get firstName() {
+        get firstName() {
             return this.first_name;
         }
 
-        public set firstName(theFirstName: string) {
+        set firstName(theFirstName: string) {
             if (!theFirstName) {
                 throw new Error('Invalid first name.');
             }
             this.first_name = theFirstName;
         }
 
-        public get lastName() {
+        get lastName() {
             return this.last_name;
         }
 
-        public set lastName(theLastName: string) {
+        set lastName(theLastName: string) {
             if (!theLastName) {
                 throw new Error('Invalid last name.');
             }
