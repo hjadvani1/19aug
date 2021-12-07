@@ -96,7 +96,7 @@ class javascript {
 
         //     const index: number = animes.findIndex((anime: any, index: number) => {
         //         console.log('===========');
-                
+
         //         return anime.title === animeitem
 
         //     })
@@ -105,7 +105,7 @@ class javascript {
 
         // const anime1 = notes(anime, 'naruto')
         // console.log('============');
-        
+
         // console.log(anime1);
 
         // const index: number = note.findIndex((note, index) => {
@@ -118,33 +118,33 @@ class javascript {
 
         //filetering in array
 
-        const filteredanime = anime.filter((anime: any, index: number) => {
+        const filteredanime = anime.filter((anime: any | string, index: number) => {
 
             const titlemacth: string = anime.title.includes('attack');
             const bodymatch: string = anime.body.includes('ever');
             console.log('===========');
-            
+
             return titlemacth || bodymatch;
 
         })
         console.log('=============');
-        
+
         console.log(filteredanime);
 
-        const getanime = function (animes: any) {
+        const getanime = function (animes: animes[]) {
             return animes.filter((anime: any) => {
                 return anime.watch;
             })
         }
         console.log('============');
-        
+
         console.log(getanime(anime));
 
 
 
         //sorting array
 
-        const sortanime = (animes: typeof anime) => {
+        const sortanime = (animes: animes[]) => {
             animes.sort((x: animes, y: animes) => {
                 if (x.title < y.title) {
                     return -1;
@@ -159,7 +159,7 @@ class javascript {
         }
 
         console.log('=========');
-        
+
         sortanime(anime)
         console.log(anime);
         res.send(arr);
