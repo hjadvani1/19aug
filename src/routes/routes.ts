@@ -14,11 +14,11 @@ const router: Router = Router();
 router.get('/string', js.stringmethod)
 router.get('/number', js.numbermethod)
 router.get('/array', js.arraymethod)
-router.get('/axiosgetposts',js.getposts)
-router.get('/axiosgetpost/:id',js.getpost)
-router.post('/axiospost/:id',js.updatePost);
-router.post('/axiosdelete/:id',js.deletePost);
-router.post('/axiosposts',js.addPost);
+router.get('/axiosgetposts',js.get_posts)
+router.get('/axiosgetpost/:id',js.get_post)
+router.post('/axiospost/:id',js.update_Post);
+router.post('/axiosdelete/:id',js.delete_Post);
+router.post('/axiosposts',js.add_Post);
 router.get('/getpromise',js.promise)
 
 

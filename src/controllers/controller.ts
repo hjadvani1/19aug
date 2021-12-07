@@ -65,7 +65,7 @@ class javascript {
         //searching arrays
         console.log(arr.indexOf('mikasa'));
 
-        interface noteitem {
+        interface animes {
             title: string;
             body: string;
             watch?: boolean
@@ -73,7 +73,7 @@ class javascript {
 
         // interface noteitems extends Array<noteitem> { }
 
-        const note: Array<noteitem> = [
+        const anime: Array<animes> = [
             {
                 title: 'attack on titan',
                 body: 'best anime ever',
@@ -92,18 +92,21 @@ class javascript {
             }
         ]
 
-        const notes: any = async (notes: any, noteitem: string) => {
+        // const notes: any = (animes: animes[], animeitem: animes) => {
 
-            const index: number = notes.findIndex((note: any, index: number) => {
-                // console.log(note); 
-                return note.title === noteitem
+        //     const index: number = animes.findIndex((anime: any, index: number) => {
+        //         console.log('===========');
+                
+        //         return anime.title === animeitem
 
-            })
-            return notes[index]
-        }
+        //     })
+        //     return notes[index]
+        // }
 
-        const anime = notes(note, 'naruto')
-        console.log(anime);
+        // const anime1 = notes(anime, 'naruto')
+        // console.log('============');
+        
+        // console.log(anime1);
 
         // const index: number = note.findIndex((note, index) => {
         //     console.log(note);  
@@ -115,30 +118,34 @@ class javascript {
 
         //filetering in array
 
-        const filteredanime = note.filter((note: any, index: any) => {
+        const filteredanime = anime.filter((anime: any, index: number) => {
 
-            const titlemacth: string = note.title.includes('attack');
-            const bodymatch: string = note.body.includes('ever');
+            const titlemacth: string = anime.title.includes('attack');
+            const bodymatch: string = anime.body.includes('ever');
+            console.log('===========');
+            
             return titlemacth || bodymatch;
 
         })
-
+        console.log('=============');
+        
         console.log(filteredanime);
 
-        const getanime = function (notes: any) {
-            return notes.filter((note: any) => {
-                return note.watch;
+        const getanime = function (animes: any) {
+            return animes.filter((anime: any) => {
+                return anime.watch;
             })
         }
-
-        console.log(getanime(note));
+        console.log('============');
+        
+        console.log(getanime(anime));
 
 
 
         //sorting array
 
-        const sortanime = (notes: any) => {
-            notes.sort((x: any, y: any) => {
+        const sortanime = (animes: typeof anime) => {
+            animes.sort((x: animes, y: animes) => {
                 if (x.title < y.title) {
                     return -1;
                 }
@@ -151,38 +158,40 @@ class javascript {
             })
         }
 
-        sortanime(note)
-        console.log(note);
+        console.log('=========');
+        
+        sortanime(anime)
+        console.log(anime);
         res.send(arr);
 
     }
 
     //fetch api 
-    getposts = async (req: Request, res: Response, next: NextFunction) => {
-        let result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
-        let posts: [post] = result.data;
+    get_posts = async (req: Request, res: Response, next: NextFunction) => {
+        const result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
+        const posts: [post] = result.data;
         return res.status(200).json({
             message: posts
         })
     }
 
-    getpost = async (req: Request, res: Response, next: NextFunction) => {
-        let id: string = req.params.id;
+    get_post = async (req: Request, res: Response, next: NextFunction) => {
+        const id: string = req.params.id;
 
-        let result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        const result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
 
-        let post: post = result.data;
+        const post: post = result.data;
 
         return res.status(200).json({
             message: post
         })
     }
 
-    updatePost = async (req: Request, res: Response, next: NextFunction) => {
-        let id: string = req.params.id;
-        let title: string = req.body.title ?? null;
-        let body: string = req.body.body ?? null;
-        let response: AxiosResponse = await axios.put(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    update_Post = async (req: Request, res: Response, next: NextFunction) => {
+        const id: string = req.params.id;
+        const title: string = req.body.title ?? null;
+        const body: string = req.body.body ?? null;
+        const response: AxiosResponse = await axios.put(`https://jsonplaceholder.typicode.com/posts/${id}`, {
             ...(title && { title }),
             ...(body && { body })
         });
@@ -191,18 +200,18 @@ class javascript {
         });
     };
 
-    deletePost = async (req: Request, res: Response, next: NextFunction) => {
-        let id: string = req.params.id;
-        let response: AxiosResponse = await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    delete_Post = async (req: Request, res: Response, next: NextFunction) => {
+        const id: string = req.params.id;
+        const response: AxiosResponse = await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
         return res.status(200).json({
             message: 'post deleted successfully'
         });
     };
 
-    addPost = async (req: Request, res: Response, next: NextFunction) => {
-        let title: string = req.body.title;
-        let body: string = req.body.body;
-        let response: AxiosResponse = await axios.post(`https://jsonplaceholder.typicode.com/posts`, {
+    add_Post = async (req: Request, res: Response, next: NextFunction) => {
+        const title: string = req.body.title;
+        const body: string = req.body.body;
+        const response: AxiosResponse = await axios.post(`https://jsonplaceholder.typicode.com/posts`, {
             title,
             body
         });
