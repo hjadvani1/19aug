@@ -220,7 +220,7 @@ class javascript {
         });
     };
 
-    promise = async (req: Request, res: Response) => {
+    promise =  (req: Request, res: Response) => {
         // let p = new Promise((resolve, reject) => {
         //     setTimeout(() => {
         //         resolve(10);
